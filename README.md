@@ -1,6 +1,6 @@
 ## History and vision
 
-The idea for this library came after the course 'Growing real systems guided by tests' here in Reykjavik, Iceland. The examples were all in Java and there was no similar supporting libraries for .NET. This is an attempt at covering that area.
+The idea for this library came after the awesome course 'Growing real systems guided by tests' by [Nat Pryce](http://natpryce.com), here in Reykjavik, Iceland. The examples were all in Java and there was no similar supporting libraries for .NET. This is an attempt at covering that area.
 
 ## Dependencies
 
