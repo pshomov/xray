@@ -11,7 +11,11 @@ namespace xray.tests
 		[Test]
 		public void sample_syntax()
 		{
-			Assert.True(Take.Snapshot(() => 6).Has(x => x, It.Is.EqualTo(6)).probeAndMatch());
+            var prober = new PollingProber(1000, 100);
+			Assert.True(prober.check(Take.Snapshot(() => new {A = 5, B = 6}).
+                Has(x => x.B, It.Is.EqualTo(6)).
+                Has(x => x.A, It.Is.EqualTo(5))
+                ));
 		}
 	}
 }
