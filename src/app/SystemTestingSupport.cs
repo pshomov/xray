@@ -16,11 +16,10 @@ namespace xray
             _matcher = matcher;
         }
 
-        #region IMatcher<T> Members
-
         public void DescribeTo(IDescription description)
         {
-            throw new NotImplementedException();
+            description.AppendText(_query.ToString()+" matches ");
+			_matcher.DescribeTo(description);
         }
 
         public bool Matches(T item)
@@ -30,10 +29,9 @@ namespace xray
 
         public void DescribeMismatch(T item, IDescription mismatchDescription)
         {
-            throw new NotImplementedException();
+            mismatchDescription.AppendText(_query.ToString()+" with parameter "+item.ToString()+"does not match matches ");
+			_matcher.DescribeTo(mismatchDescription);
         }
-
-        #endregion
     }
 	
     public interface SnapshotExpectationsBuilder<T> : Probe
