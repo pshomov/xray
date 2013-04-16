@@ -47,6 +47,11 @@ namespace xray
             f.AddMatcher(query, matcher);
             return f;
         }
+        public static SnapshotExpectationsBuilder<V> Has<V>(this SnapshotExpectationsBuilder<V> f, IMatcher<V> matcher)
+        {
+            f.AddMatcher(v => v, matcher);
+            return f;
+        }
     }
 
     public class SnapshotMatchingProbe<T> : SnapshotExpectationsBuilder<T>
